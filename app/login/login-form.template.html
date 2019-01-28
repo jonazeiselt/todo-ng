@@ -1,0 +1,19 @@
+<div id="login-form">
+    <span id="title">Login</span>
+    <form name="$ctrl.loginForm" ng-submit="$ctrl.login()" novalidate>
+        <div class="container">
+            <input type="text" placeholder="Username" name="username" ng-model="$ctrl.username" ng-style="{ 'border-color': $ctrl.usernameColor }" required> 
+        </div>
+
+        <div class="container">
+            <input type="password" placeholder="Password" name="password" ng-model="$ctrl.password" ng-style="{ 'border-color': $ctrl.passwordColor }" required> 
+            <span class="invalid" ng-show="$ctrl.credentialsInvalid" ng-cloak>{{$ctrl.credentialsInvalidMessage}}</span>
+        </div>
+        
+        <div>
+            <input type="submit" value="Login">
+        </div>
+    </form>
+
+    <span>No account? <a href="#!register">Create account</a></span>
+</div>

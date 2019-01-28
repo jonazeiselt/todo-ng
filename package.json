@@ -1,0 +1,24 @@
+{
+  "name": "todong",
+  "version": "1.0.0",
+  "main": "app/app.module.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-protractor-runner": "^5.0.0",
+    "grunt-serve": "^0.1.6",
+    "protractor": "^5.4.2",
+    "selenium-webdriver": "^4.0.0-alpha.1",
+    "webdriver-manager": "^12.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "node ./node_modules/protractor/bin/webdriver-manager update"
+  },
+  "author": "Jonas Eiselt",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,0 +1,29 @@
+<div id="registration-form">
+    <span id="title">Register</span>
+    <form name="$ctrl.registrationForm" ng-submit="$ctrl.register()" novalidate>
+        <div class="container">
+            <input type="text" placeholder="Username" name="username" ng-model="$ctrl.username" ng-style="{ 'border-color': $ctrl.usernameColor }" required> 
+            <span class="invalid" ng-cloak>{{$ctrl.usernameMessage}}</span>
+        </div>
+
+        <div class="container">
+            <input type="email" placeholder="Email" name="email" ng-model="$ctrl.email" ng-style="{ 'border-color': $ctrl.emailColor }" required>
+            <span class="invalid" ng-cloak>{{$ctrl.emailMessage}}</span>
+        </div>
+
+        <div class="container">
+            <input type="password" placeholder="Password" name="password" ng-model="$ctrl.password" ng-style="{ 'border-color': $ctrl.passwordColor }" required>
+        </div>
+
+        <div class="container">
+            <input type="password" placeholder="Re-enter password" name="reenteredPassword" ng-model="$ctrl.reenteredPassword" ng-style="{ 'border-color': $ctrl.reenteredPasswordColor }" required>
+            <span class="invalid" ng-cloak>{{$ctrl.passwordMessage}}</span>
+        </div>
+
+        <div>
+            <input type="submit" value="Register">
+        </div>
+    </form>
+
+    <span>Already have an account? <a href="#!login">Login</a></span>
+</div>

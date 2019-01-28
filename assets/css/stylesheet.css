@@ -1,0 +1,448 @@
+﻿/* CSS document */
+@font-face {
+  font-family: "KievitOT-Regular";
+    src: url("../css/KievitOT-Regular.otf");
+}
+
+html, body div, header, nav, main, section, footer {
+  margin: 0;
+  padding: 0;
+}
+
+header, nav, main, footer, section {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+body {
+    /* Sticky footer with flex */
+  display: flex;
+  flex-direction: column;
+    /* css-tricks.com: Avoid the IE 10-11 "min-height" bug */
+  height: 100vh;
+  margin: 0;
+  font-size: 1em;
+  color: #363135;
+  font-family: 'KievitOT-Regular', 'Source Serif Pro';
+  background-color: #fbf9f9;
+}
+
+footer {
+  padding: 3em 1em;
+  text-align: center;
+  color: #363135;
+  font-size: 1.1em;
+  display: inline-block;
+  border-top: 1px dashed #cccccc;
+}
+
+div {
+  -webkit-box-sizing: border-box;
+ /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+ /* Firefox, other Gecko */
+  box-sizing: border-box;
+ /* Opera/IE 8+ */;
+}
+
+login-form, registration-form {
+  display: block;
+ /* Make sure that browser know the new ng-element */
+  width: 80%;
+  max-width: 400px;
+}
+
+login-form {
+  margin: 20vh auto;
+}
+
+registration-form {
+  margin: 10vh auto;
+}
+
+div#login-form span#title, div#registration-form span#title {
+  font-size: 1.8em;
+  text-align: center;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 1.5em;
+}
+
+input {
+  -webkit-box-sizing: border-box;
+ /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+ /* Firefox, other Gecko */
+  box-sizing: border-box;
+ /* Opera/IE 8+ */
+  width: 100%;
+  font-family: 'KievitOT-Regular', 'Source Serif Pro';
+  font-size: 1em;
+  height: 2.5em;
+  padding: 0 1em;
+  border-radius: 0.1em;
+  outline: none;
+}
+
+input:not([type=submit]):not([type=button]) {
+  border: 1px solid #cccccc;
+}
+
+input[type=submit], input[type=button] {
+  font-size: 1.1em;
+  border: none;
+  outline: none;
+}
+
+div#login-form input[type=submit] {
+  color: #fbf9f9;
+  background-color: #34bb71;
+  margin-bottom: 0.5em;
+}
+
+div#login-form input[type=submit]:hover {
+  background-color: #2d9f60;
+}
+
+div#login-form input[type=submit]:active {
+  background-color: #34bb71;
+}
+
+/* Define style for reg. button */
+div#registration-form input[type=submit] {
+  color: #fbf9f9;
+  background-color: #69b09c;
+  margin-bottom: 0.5em;
+}
+
+div#registration-form input[type=submit]:hover {
+  background-color: #4f9682;
+}
+
+div#registration-form input[type=submit]:active {
+  background-color: #69b09c;
+}
+
+span.invalid {
+  font-size: 0.8em;
+  color: #f44336;
+}
+
+form div.container {
+  margin-bottom: 0.5em;
+}
+
+div#login-form form > div:nth-of-type(2) {
+  height: 2.5em;
+}
+
+div#login-form form > div:last-of-type {
+  margin-top: 2em;
+}
+
+div#registration-form form div.container:not(:nth-of-type(3)) {
+  height: 3.5em;
+}
+
+div#registration-form form > div:last-of-type {
+  margin-top: 1em;
+}
+
+todo-view {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 900px;
+}
+
+todo-view > .todo-header {
+  height: 3em;
+  width: 100%;
+  margin: 1em 0;
+  display: inline-block;
+}
+
+todo-view > .todo-header > .greeting {
+  float: left;
+  height: 100%;
+  width: 80%;
+  font-size: 2em;
+}
+
+todo-view > .todo-header > input[type=button] {
+  width: 20%;
+  height: 100%;
+  color: #363135;
+  background-color: #f5f0f0;
+}
+
+todo-view > .todo-header > input[type=button]:hover {
+  text-decoration: underline;
+  background-color: #ebe0e0;
+}
+
+todo-view > .todo-header > input[type=button]:active {
+  text-decoration: none;
+  background-color: #f5f0f0;
+}
+
+/* todo-area */
+.todo-area {
+  padding: 1em;
+  border: 1px dashed #cccccc;
+  margin-top: 1em;
+}
+
+.todo-area > div {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.todo-area > .priority {
+  width: 15%;
+}
+
+.todo-area > .description {
+  width: calc(65% - 8px);
+  height: 4.6em;
+}
+
+.todo-area > .add-todo {
+  width: 20%;
+  margin-top: 1.1em;
+ /* font size of labels + 0.1em */;
+}
+
+div.todo-sort {
+  margin-top: 1em;
+}
+
+div.todo-sort select {
+  margin-right: 1em;
+}
+
+div.todo-sort select, div.todo-sort option {
+  font-size: 1em;
+  font-family: 'KievitOT-Regular', 'Source Serif Pro';
+  outline: none;
+}
+
+div.todo-sort input[type=radio] {
+  width: initial;
+  font-size: 0.8em;
+  height: initial;
+  outline: none;
+}
+
+
+/* Todo list */
+.todo-list {
+  margin: 1em 0 2em 0;
+  border: 1px solid #cccccc;
+}
+    /* Todo header */
+.todo-list > .todo > .todo-header {
+  height: 2em;
+  background-color: #f5f0f0;
+  border-bottom: 1px solid #cccccc;
+}
+
+.open-img-bg {
+  height: 2em;
+  background-image: url("../img/open.png");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 1em) center;
+  background-size: 2em 2em;
+}
+
+.close-img-bg {
+  height: 2em;
+  background-image: url("../img/close.png");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 1em) center;
+  background-size: 2em 2em;
+}
+
+.todo-list > .todo:not(:first-of-type) > .todo-header {
+  border-top: 1px solid #cccccc;
+}
+
+.todo-list > .todo > .todo-header:hover {
+  background-color: #eae1e1;
+}
+
+.todo-list > .todo > .todo-header:active {
+  background-color: #f5f0f0;
+}
+/* A todo's content */
+.todo-list > .todo > .todo-content {
+    height: 8em;
+    padding: 1em;
+}
+
+    .todo-list > .todo > .todo-content > div {
+        float: left;
+    }
+
+    .todo-list > .todo > .todo-content > .priority {
+        height: 100%;
+        width: 4em;
+        padding-left: 1em;
+        border-right: 1px solid #f44336;
+    }
+
+        .todo-list > .todo > .todo-content > .priority > span {
+            /* vertically align by using same height as .todo-content */
+            line-height: calc(8em - 2.2em*2 - 1em);
+            font-size: 2.2em;
+        }
+
+    .todo-list > .todo > .todo-content > .information {
+        height: 100%;
+        width: calc(65% - 4em);
+    }
+
+        .todo-list > .todo > .todo-content > .information > .description {
+            height: 55%;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .todo-list > .todo > .todo-content > .information > .description > span {
+                font-size: 1.2em;
+                position: absolute;
+                bottom: 0;
+                left: 0.5em;
+            }
+
+        .todo-list > .todo > .todo-content > .information > .added-at {
+            height: 45%;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .todo-list > .todo > .todo-content > .information > .added-at > span {
+                font-size: 0.8em;
+                position: absolute;
+                bottom: 100;
+                left: 0.8em;
+            }
+
+    .todo-list > .todo > .todo-content > .status {
+        height: 100%;
+        width: 35%;
+    }
+
+        .todo-list > .todo > .todo-content > .status > div {
+            position: relative;
+            height: 100%;
+        }
+
+            .todo-list > .todo > .todo-content > .status > div > input {
+                position: absolute;
+                top: calc(50% - 1em);
+            }
+/* Todo's expandible content */
+.todo-list > .todo > .todo-more {
+  width: 100%;
+  padding: 1em;
+  border-top: 1px dashed #cccccc;
+}
+
+.todo-list > .todo > .todo-more div {
+  display: inline-block;
+  width: calc(50% - 2px);
+}
+
+.todo-list > .todo > .todo-more div:first-child {
+  width: calc(20% - 4px);
+  margin-bottom: 1em;
+}
+
+.todo-list > .todo > .todo-more div:nth-child(2) {
+  width: 80%;
+  margin-bottom: 1em;
+}
+
+todo-view input[type=button] {
+  display: inline;
+  border-radius: 0.3em;
+  color: #fbf9f9;
+}
+
+todo-view .red-bg {
+  background-color: #f44336;
+}
+
+todo-view .red-bg:hover {
+  background-color: #f21c0d;
+}
+
+todo-view .red-bg:active {
+  background-color: #f44336;
+}
+
+todo-view .green-bg {
+  background-color: #34bb71;
+}
+
+todo-view .green-bg:hover {
+  background-color: #2d9f60;
+}
+
+todo-view .green-bg:active {
+  background-color: #34bb71;
+}
+
+todo-view .nugget-bg {
+  background-color: #ddbc3c;
+}
+
+todo-view .nugget-bg:hover {
+  background-color: #c2a322;
+}
+
+todo-view .nugget-bg:active {
+  background-color: #ddbc3c;
+}
+
+todo-view .blue-bg {
+  background-color: #4da6ff;
+}
+
+todo-view .blue-bg:hover {
+  background-color: #0080ff;
+}
+
+todo-view .blue-bg:active {
+  background-color: #4da6ff;
+}
+
+@media screen and (max-width: 780px) {
+    /* Display the 'Add to-do'-button on a separate row */
+  .todo-area > .priority {
+    width: 25%;
+  }
+
+  .todo-area > .description {
+    width: calc(75% - 4px);
+    height: 4.6em;
+    float: right;
+  }
+
+  .todo-area > .add-todo {
+    width: 100%;
+    margin: 0;
+    margin-top: 0.5em;
+ /* font size of labels + 0.1em */;
+  }
+
+    /* Display the 'Done/Not Done'-button on a separate row */;
+}

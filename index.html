@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html ng-app="loginApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Application</title>
+    <script src="assets/libs/angular/angular.js"></script>
+    <script src="assets/libs/angular-route/angular-route.js"></script>
+    <script src="assets/libs/angular-cookies/angular-cookies.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/app.config.js"></script>
+    <script src="app/login/login-form.module.js"></script>
+    <script src="app/login/login-form.component.js"></script>
+    <script src="app/register/registration-form.module.js"></script>
+    <script src="app/register/registration-form.component.js"></script>
+    <script src="app/todo/todo-view.module.js"></script>
+    <script src="app/todo/todo-view.component.js"></script>
+    <script src="app/account/account.module.js"></script>
+    <script src="app/account/account.service.js"></script>
+    <link rel="stylesheet" href="assets/css/stylesheet.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sarabun">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Serif+Pro">
+
+    <base href="/">
+</head>
+
+<body>
+    <!-- The browser is caching the files. Press Ctrl+F5 or Ctrl+R to force the browser to 
+         GET the files from the server whenever there is a change. -->
+    <main ng-view></main>
+    <footer>&copy; 2019 Jonas Eiselt</footer>
+</body>
+
+</html>

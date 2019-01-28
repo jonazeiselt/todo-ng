@@ -1,0 +1,84 @@
+<div class="todo-header">
+    <span class="greeting">{{$ctrl.greeting}}</span>
+    <input type="button" value="Logout" ng-click="$ctrl.logout()">
+</div>
+
+<div class="todo-area">
+    <div class="priority">
+        <label for="">Priority</label> <br>
+        <input type="number" name="priority" min="1" max="10" ng-model="$ctrl.priority">
+    </div>
+    
+    <div class="description">
+        <label for="">Description</label> <br>
+        <input type="text" name="description" ng-model="$ctrl.description" ng-style="{ 'border-color': $ctrl.addTodoBorderColor }">
+        <span class="invalid" ng-cloak>{{$ctrl.addTodoInvalidMessage}}</span>
+    </div>
+        
+    <div class="add-todo">
+        <input type="button" value="Add to-do" class="green-bg" ng-click="$ctrl.addTodo()">
+    </div>
+</div>
+
+<div class="todo-sort">
+    <select name="orderBySelect" ng-model="$ctrl.order" ng-options="option.id as option.name for option in $ctrl.orderOptions">
+    </select>
+
+    <label for="ascending">Ascending</label>
+    <input type="radio" id="ascending" value="ascending" ng-model="$ctrl.sortOrder">
+
+    <label for="descending">Descending</label>
+    <input type="radio" id="descending" value="descending" ng-model="$ctrl.sortOrder">
+</div>
+
+
+<div class="todo-list">
+    <div class="todo" ng-repeat="todo in $ctrl.todos | orderBy:valueOf() : $ctrl.sortOrder == 'descending' : $ctrl.todoComparator">
+        <!-- Clickable header that expands todo-more -->
+        <div class="todo-header" ng-click="expanded = !expanded" ng-init="expanded = false">
+            <div ng-class="{true: 'close-img-bg', false: 'open-img-bg'} [expanded]">
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="todo-content">
+            <div class="priority">
+                <span>{{todo.priority}}</span>
+            </div>
+
+            <div class="information">
+                <div class="description"><span>{{todo.description}}</span></div>
+                <div class="added-at"><span>Added on {{todo.addedAt | date:'EEEE dd MMM'}}</span></div>
+            </div>
+
+            <div class="status">
+                <div>
+                    <input type="button" ng-class="{true: 'green-bg', false: 'blue-bg'} [todo.done == 'Done']" ng-value="todo.done"
+                        ng-click="todo.toggleTodo(); todo.done == 'Done' ? todo.done = 'Not done' : todo.done = 'Done';">
+                </div>
+            </div>
+        </div>
+
+        <!-- Content that can be expanded -->
+        <div class="todo-more" ng-show="expanded">
+            <div>
+                <label for="">Priority</label> <br>
+                <input type="number" name="priority" min="1" max="10" ng-model="todo.tmp_priority">
+            </div>
+
+            <div>
+                <label for="">Description</label> <br>
+                <input type="text" name="description" ng-model="todo.tmp_description">
+            </div>
+
+            <div>
+                <input type="button" value="Apply changes" class="nugget-bg" ng-click="todo.editTodo()">
+            </div>
+
+            <div>
+                <input type="button" value="Delete to-do" class="red-bg" ng-click="todo.deleteTodo()">
+            </div>
+        </div>
+    </div>
+</div>
+      

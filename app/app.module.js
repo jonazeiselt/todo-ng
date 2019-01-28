@@ -1,0 +1,1 @@
+﻿angular.module('loginApp', ['ngRoute', 'ngCookies', 'accountModule', 'loginForm', 'registrationForm', 'todoView']);

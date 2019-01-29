@@ -55,7 +55,7 @@ var screenHeight = size.height;
        
 // When width is 780 px or lower the add-to-do button is displayed on a separate row
 // according to defined css rules
-browser.driver.manage().window().setSize(780, screenSize.height);
+browser.driver.manage().window().setSize(780, screenHeight);
 
 var layoutObjs = [
   // input positioned on top of layoutObjs[2], to the left of layoutObjs[1]

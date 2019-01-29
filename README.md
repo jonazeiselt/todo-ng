@@ -9,8 +9,8 @@ The main goal of this project was to get familiar with GUI testing of Angular ap
 \
 \
 <img src="/../master/assets/img/rwd.PNG" width="80%">
-\
-\
+
+
 ### Project structure
 ```
 .
@@ -50,10 +50,8 @@ var RwdAsserter = require("../js/rwd-asserter");
 var rwdAsserter = new RwdAsserter();
 ...
 
-var screenSize = {};
 let size = await browser.driver.manage().window().getSize();
-screenSize.width = size.width;
-screenSize.height = size.height;
+var screenHeight = size.height;
        
 // When width is 780 px or lower the add-to-do button is displayed on a separate row
 // according to defined css rules

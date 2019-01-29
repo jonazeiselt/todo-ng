@@ -86,7 +86,7 @@ this.assertLayout = async function (layoutObjs) {
       if (layoutObj.hasOwnProperty(property)) {
         var elements = [];
         if (property !== "layout") {
-          // This will loop through indices associated with param layout
+          // This will loop through indices associated with param layoutObjs
           for (var idx in layoutObj[property]) {
             let val = (layoutObj[property])[idx];
             elements.push(layoutObjs[val].element);

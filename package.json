@@ -1,7 +1,7 @@
 {
   "name": "todong",
   "version": "1.0.0",
-  "main": "app/app.module.js",
+  "main": "Gruntfile.js",
   "directories": {
     "test": "tests"
   },
@@ -14,7 +14,7 @@
     "webdriver-manager": "^12.1.1"
   },
   "scripts": {
-    "test": "grunt",
+    "test": "grunt test",
     "install": "node ./node_modules/protractor/bin/webdriver-manager update"
   },
   "author": "Jonas Eiselt",

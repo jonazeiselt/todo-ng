@@ -89,34 +89,34 @@ this.assertLayout = async function (layoutObjs) {
           // This will loop through indices associated with param layoutObjs
           for (var idx in layoutObj[property]) {
             let val = (layoutObj[property])[idx];
-            elements.push(layoutObjs[val].element);
+            elements.push(layoutObjs[val].layout); // layout field contains the web element
           }
         }
 
         switch (property) {
           case "onTopOf":
             // Make sure that element in layoutObj is placed on top of each element in elements
-            await this.assertElementOnTopOf(layoutObj.element, elements);
+            await this.assertElementOnTopOf(layoutObj.layout, elements);
             break;
           case "belowOf":
             // Make sure that element in layoutObj is placed below each element in elements
-            await this.assertElementBelowOf(layoutObj.element, elements);
+            await this.assertElementBelowOf(layoutObj.layout, elements);
             break;
           case "toLeftOf":
             // Make sure that element in layoutObj is placed to the left of each element in elements
-            await this.assertElementToLeftOf(layoutObj.element, elements);
+            await this.assertElementToLeftOf(layoutObj.layout, elements);
             break;
           case "toRightOf":
             // Make sure that element in layoutObj is placed to the right of each element in elements
-            await this.assertElementToRightOf(layoutObj.element, elements);
+            await this.assertElementToRightOf(layoutObj.layout, elements);
             break;
           case "start_toStartOf":
             // Make sure that element in layoutObj is placed in the beginning of each element in elements
-            await this.assertElementStartToStartOf(layoutObj.element, elements);
+            await this.assertElementStartToStartOf(layoutObj.layout, elements);
             break;
           case "end_toEndOf":
             // Make sure that element in layoutObj ends at the end of each element in elements
-            await this.assertElementEndToEndOf(layoutObj.element, elements);
+            await this.assertElementEndToEndOf(layoutObj.layout, elements);
             break;
         }
       }

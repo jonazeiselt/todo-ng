@@ -47,28 +47,28 @@ describe("Todo test suite", function () {
 
         // Maximize window
         browser.driver.manage().window().maximize();
-        var layout = [
+        var layoutObjs = [
             // input positioned to the left of layout[1]
-            { element: todoPage.priorityInput, toLeftOf: [1, 2] },
+            { layout: todoPage.priorityInput, toLeftOf: [1, 2] },
             // input positioned to the right of layout[0]
-            { element: todoPage.descriptionInput, toRightOf: [0], toLeftOf: [2] },
+            { layout: todoPage.descriptionInput, toRightOf: [0], toLeftOf: [2] },
             // button positioned to the right of layout[1]
-            { element: todoPage.addTodoButton, toRightOf: [0,1] }
+            { layout: todoPage.addTodoButton, toRightOf: [0,1] }
         ];
-        await rwdAsserter.assertLayout(layout);
+        await rwdAsserter.assertLayout(layoutObjs);
 
         // When width is 780 px or lower the add-to-do button is displayed on a separate row
         browser.driver.manage().window().setSize(780, screenSize.height);
 
-        var layout = [
+        var layoutObjs = [
             // input positioned on top of layout[2], to the left of layout[1]
-            { element: todoPage.priorityInput, onTopOf: [2], toLeftOf: [1] },
+            { layout: todoPage.priorityInput, onTopOf: [2], toLeftOf: [1] },
             // input positioned on top of layout[2], to the right of layout[0]
-            { element: todoPage.descriptionInput, onTopOf: [2], toRightOf: [0] },
+            { layout: todoPage.descriptionInput, onTopOf: [2], toRightOf: [0] },
             // button positioned below of layout[0] and [1], same start x-value as layout[0] and same end x-value as layout[1]
-            { element: todoPage.addTodoButton, belowOf: [0,1], start_toStartOf: [0], end_toEndOf: [1] }
+            { layout: todoPage.addTodoButton, belowOf: [0,1], start_toStartOf: [0], end_toEndOf: [1] }
         ];
-        await rwdAsserter.assertLayout(layout);
+        await rwdAsserter.assertLayout(layoutObjs);
 
         //browser.driver.manage().window().maximize();
         //browser.driver.manage().window().setPosition(x, y);

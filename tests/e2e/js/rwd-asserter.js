@@ -112,55 +112,51 @@ var RwdAsserter = function () {
      * it must be in relation to other children. Light version of Android's 
      * ConstraintLayout.
      */
-    this.assertLayout = async function (layout) {
-        for (var i = 0; i < layout.length; i++) {
-            var layoutObj = layout[i];
+    this.assertLayout = async function (layoutObjs) {
+        for (var i = 0; i < layoutObjs.length; i++) {
+            var layoutObj = layoutObjs[i];
             // Go through the object's fields
             for (var property in layoutObj) {
                 if (layoutObj.hasOwnProperty(property)) {
-                    console.log(i + ": " + property);
-
                     var elements = [];
-                    if (property !== "element") {
-                        // This will loop through indices associated with param layout
+                    if (property !== "layout") {
+                        console.log(property);
+
+                        // This will loop through indices associated with param layoutObjs
                         for (var idx in layoutObj[property]) {
                             let val = (layoutObj[property])[idx];
-                            elements.push(layout[val].element);
+                            elements.push(layoutObjs[val].layout); // Add web element to array
                         }
                     }
 
-                    // tillgänglighetstestning
-                    // asynkrona anrop
-                    // console.log("\t" + property + ", elements = " + elements.length);
                     switch (property) {
                         case "onTopOf":
                             // Make sure that element in layoutObj is placed on top of each element in elements
-                            await this.assertElementOnTopOf(layoutObj["element"], elements);
+                            await this.assertElementOnTopOf(layoutObj["layout"], elements);
                             break;
                         case "belowOf":
                             // Make sure that element in layoutObj is placed below each element in elements
-                            await this.assertElementBelowOf(layoutObj["element"], elements);
+                            await this.assertElementBelowOf(layoutObj["layout"], elements);
                             break;
                         case "toLeftOf":
                             // Make sure that element in layoutObj is placed to the left of each element in elements
-                            await this.assertElementToLeftOf(layoutObj["element"], elements);
+                            await this.assertElementToLeftOf(layoutObj["layout"], elements);
                             break;
                         case "toRightOf":
                             // Make sure that element in layoutObj is placed to the right of each element in elements
-                            await this.assertElementToRightOf(layoutObj["element"], elements);
+                            await this.assertElementToRightOf(layoutObj["layout"], elements);
                             break;
                         case "start_toStartOf":
                             // Make sure that element in layoutObj is placed in the beginning of each element in elements
-                            await this.assertElementStartToStartOf(layoutObj["element"], elements);
+                            await this.assertElementStartToStartOf(layoutObj["layout"], elements);
                             break;
                         case "end_toEndOf":
                             // Make sure that element in layoutObj ends at the end of each element in elements
-                            await this.assertElementEndToEndOf(layoutObj["element"], elements);
+                            await this.assertElementEndToEndOf(layoutObj["layout"], elements);
                             break;
                     }
                 }
             }
-            console.log("");
         }
     };
 

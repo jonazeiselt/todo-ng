@@ -10,15 +10,11 @@
             e2e: {
                 options: {
                     configFile: "tests/protractor.config.js"
-                    /*args: {
-                        baseUrl: "http://localhost:50940/#!/"
-                    }*/
                 }
             }
         }
     });
 
-    grunt.loadNpmTasks('grunt-serve');
     grunt.loadNpmTasks('grunt-protractor-runner');
-    grunt.registerTask('default', ['protractor']);
+    grunt.registerTask('default', ['protractor:e2e']);
 };

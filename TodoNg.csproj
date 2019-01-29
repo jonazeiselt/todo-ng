@@ -4230,6 +4230,8 @@
     <Content Include="bin\TodoNg.dll.config" />
     <None Include="packages.config" />
     <Content Include="assets\libs\angular\angular.min.js.map" />
+    <Content Include="README.md" />
+    <Content Include="todo-jenkins.bat" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

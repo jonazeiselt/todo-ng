@@ -1,0 +1,10 @@
+# Ignore MS Visual Studio 2017 files
+/bin/
+/obj/
+/Properties/
+/packages.config
+/TodoNg.csproj
+/TodoNg.csproj.user
+/Web.config
+/Web.Debug.config
+/Web.Release.config
